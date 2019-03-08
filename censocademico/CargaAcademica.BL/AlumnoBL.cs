@@ -37,6 +37,7 @@ namespace CargaAcademica.BL
 
                 alumnoExistente.Id = alumno.Id;
                alumnoExistente.NombreAlumno = alumno.NombreAlumno;
+                alumnoExistente.UrlImagen = alumno.UrlImagen;
              
             }
 

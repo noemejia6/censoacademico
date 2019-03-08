@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Imagenes\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Periodo\" />
   </ItemGroup>

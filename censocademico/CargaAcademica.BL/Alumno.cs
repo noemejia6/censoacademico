@@ -11,6 +11,7 @@ namespace CargaAcademica.BL
     {
         [Required (ErrorMessage ="Ingrese el ID del alumno")]//validacion que no permite dejar vacio el campo Id
         public int Id { get; set; }
+        [Required(ErrorMessage = "Este campo no puede quedar vacio")]
         public string NombreAlumno { get; set; }
 
         [Display(Name ="Imagen")]

@@ -1,16 +1,17 @@
 ﻿@model IEnumerable<CargaAcademica.BL.Alumno>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Alumno";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Alumno", "Crear")
+    @Html.ActionLink("Crear un alumno", "Crear")
 </p>
 <table class="table">
     <tr>
+        <th></th>
         <th>
             @Html.DisplayNameFor(model => model.Id)
         </th>
@@ -23,6 +24,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                <img src="@item.UrlImagen" alt="@item.NombreAlumno" style="max-width:64px; height:auto; "
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>

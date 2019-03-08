@@ -39,15 +39,18 @@ namespace CargaAcademica.WebAdmin.Controllers//paso 4 controlador para las accio
             if (ModelState.IsValid)//validacion con estructura if que evalua si el model state es valio.
                                   //entonces permite guardar. 
             {
+                 if (imagen != null)
+                {
+                    alumno.UrlImagen = GuardarImagen(imagen);
+                }
+
                 _AlumnoBL.GuardarAlumno(alumno);
+
 
                 return RedirectToAction("Index");//pendiente index
             }
 
-            if (imagen != null)
-                {
-                alumno.UrlImagen = GuardarImagen(imagen);
-                }
+
 
             return View(alumno);
         }
@@ -61,7 +64,7 @@ namespace CargaAcademica.WebAdmin.Controllers//paso 4 controlador para las accio
         }
 
         [HttpPost]
-        public ActionResult Editar(Alumno alumno)
+        public ActionResult Editar(Alumno alumno, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
@@ -69,6 +72,11 @@ namespace CargaAcademica.WebAdmin.Controllers//paso 4 controlador para las accio
                 {
 
                 }*/
+
+                if (imagen != null)
+                {
+                    alumno.UrlImagen = GuardarImagen(imagen);
+                }
                 _AlumnoBL.GuardarAlumno(alumno);
 
                 return RedirectToAction("Index");//pendiente index tambien
@@ -104,8 +112,9 @@ namespace CargaAcademica.WebAdmin.Controllers//paso 4 controlador para las accio
         private string GuardarImagen(HttpPostedFileBase imagen)
         {
             string path = Server.MapPath("~/Imagenes/" + imagen.FileName);//para sacar ese simbolo uso alt + 126
+            imagen.SaveAs(path);
 
-            return "/imagenes/" + imagen.FileName;
+            return "/Imagenes/" + imagen.FileName;
 
         }
     }
