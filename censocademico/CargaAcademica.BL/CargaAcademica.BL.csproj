@@ -54,6 +54,8 @@
     <Compile Include="Asignatura.cs" />
     <Compile Include="AsignaturasBL.cs" />
     <Compile Include="CargaAcademicaBL.cs" />
+    <Compile Include="CensoMaestro.cs" />
+    <Compile Include="CensoMaestroBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="PeridoBL.cs" />
     <Compile Include="Periodo.cs" />

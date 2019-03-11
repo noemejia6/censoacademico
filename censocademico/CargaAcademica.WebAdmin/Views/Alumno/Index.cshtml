@@ -4,7 +4,7 @@
     ViewBag.Title = "Alumno";
 }
 
-<h2>Index</h2>
+<h2>Informatica</h2>
 
 <p>
     @Html.ActionLink("Crear un alumno", "Crear")
@@ -24,6 +24,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            
             <td>
                 <img src="@item.UrlImagen" alt="@item.NombreAlumno" style="max-width:64px; height:auto; "
             </td>
