@@ -26,6 +26,16 @@ namespace CargaAcademica.BL
 
             return ListadePeriodos;
         }
+        public List<Periodo> ObtenerPeriodosActivos()
+        {
+            ListadePeriodos = _contexto.Periodos
+                   //.Where(r => r.Activo == true)
+                 .OrderBy(r => r.numero)
+                .ToList();
+
+            return ListadePeriodos;
+        }
+
 
         public Periodo ObtenerPeriodo(int id)
         {

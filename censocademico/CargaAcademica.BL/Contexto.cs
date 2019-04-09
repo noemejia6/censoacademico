@@ -27,8 +27,10 @@ namespace CargaAcademica.BL
 
         public DbSet<Alumno> Alumnos { get; set; }//paso 1
 
+        public DbSet<Horarios> Horarios { get; set; }
+
         public DbSet<CensoMaestro> CensosMaestros { get; set; }// base de adato para mi clase maestro
-        public DbSet<CensoDetalle> CensosDetalles { get; set; }// base para mi clase detalles
+     public DbSet<CensoDetalle> CensosDetalles { get; set; }// base para mi clase detalles
 
 
 

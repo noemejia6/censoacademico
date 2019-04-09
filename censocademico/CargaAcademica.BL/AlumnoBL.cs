@@ -20,7 +20,21 @@ namespace CargaAcademica.BL
 
         public List<Alumno> ObtenerAlumnos()
         {
-            ListadeAlumnos = _contexto.Alumnos.ToList();
+            ListadeAlumnos = _contexto.Alumnos
+                .OrderBy(r => r.NombreAlumno)
+                .ToList();
+           
+            return ListadeAlumnos;
+        }
+
+        public List<Alumno> ObtenerAlumnosActivos()
+        {
+            ListadeAlumnos = _contexto.Alumnos
+
+                   .Where(r => r.Activo == true)
+                 .OrderBy(r => r.NombreAlumno)
+                .ToList();
+            
 
             return ListadeAlumnos;
         }
@@ -38,7 +52,8 @@ namespace CargaAcademica.BL
                 alumnoExistente.Id = alumno.Id;
                alumnoExistente.NombreAlumno = alumno.NombreAlumno;
                 alumnoExistente.UrlImagen = alumno.UrlImagen;
-             
+                alumnoExistente.Activo = alumno.Activo;
+
             }
 
             _contexto.SaveChanges();
